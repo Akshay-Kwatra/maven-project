@@ -22,19 +22,23 @@ pipeline {
 
         stage('Deploy to staging and prod'){
  
-        parallel{
-            stage('Deploy to stage'){
-              steps{
-              bat "cp **/target/*.war /c/Users/ak15023/Downloads/apache-tomcat-8.5.50/webapps/"
-            }
+            parallel{
+                stage('Deploy to stage'){
+                steps{
+                bat "cp **/target/*.war /c/Users/ak15023/Downloads/apache-tomcat-8.5.50/webapps/"
+             }
+                }
 
-            stage('Deploy to prod'){
-              steps{
-               bat "cp **/target/*.war /c/Users/ak15023/Downloads/apache-tomcat-8.5.50-prod/webapps/"
-            }
+                stage('Deploy to prod'){
+                steps{
+                 bat "cp **/target/*.war /c/Users/ak15023/Downloads/apache-tomcat-8.5.50-prod/webapps/"
+             }
+                } 
 
+            }
         }
+   
     }
-}
 
 }
+
