@@ -25,13 +25,13 @@ pipeline {
             parallel{
                 stage('Deploy to stage'){
                 steps{
-                bat "cp **/target/*.war /c/Users/ak15023/Downloads/apache-tomcat-8.5.50/webapps/"
+                bat "cp **/target/*.war C:\\Users\\ak15023\\Downloads\\apache-tomcat-8.5.50\\webapps"
              }
                 }
 
                 stage('Deploy to prod'){
                 steps{
-                 bat "cp **/target/*.war /c/Users/ak15023/Downloads/apache-tomcat-8.5.50-prod/webapps/"
+                 bat "cp **/target/*.war C:\\Users\\ak15023\\Downloads\\apache-tomcat-8.5.50-prod\\webapps"
              }
                 } 
 
